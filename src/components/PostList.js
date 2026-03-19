@@ -7,7 +7,7 @@ class PostList extends Component {
 
     this.state = {
       posts: [],
-      error: "",
+      errorMsg: "",
     };
   }
 
