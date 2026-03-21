@@ -1,4 +1,5 @@
 import logo from "./logo.svg";
+import React from "react";
 import "./App.css";
 import PostList from "./components/PostList";
 import PostForm from "./components/PostForm";
@@ -15,11 +16,20 @@ import MouseContainer from "./components/MouseContainer";
 import IntervalClassCounter from "./components/IntervalClassCounter";
 import IntervalHookCounter from "./components/IntervalHookCounter";
 import DataFetching from "./components/DataFetching";
+import ComponentC from "./components/ComponentC";
 
+export const UserContext = React.createContext();
+export const ChannelContext = React.createContext();
 function App() {
   return (
     <div className="App">
-      <DataFetching />
+      <UserContext.Provider value={"Renuka"}>
+        <ChannelContext.Provider value={"Patil"}>
+          <ComponentC />
+        </ChannelContext.Provider>
+      </UserContext.Provider>
+
+      {/* <DataFetching /> */}
 
       {/* <IntervalHookCounter someProp="hello" />
       <IntervalClassCounter /> */}
