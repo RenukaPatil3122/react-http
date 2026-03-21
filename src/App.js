@@ -11,12 +11,14 @@ import HookCounterOne from "./components/HookCounterOne";
 import ClassCounterOne from "./components/ClassCounterOne";
 import ClassMouse from "./components/ClassMouse";
 import HookMouse from "./components/HookMouse";
+import MouseContainer from "./components/MouseContainer";
 
 function App() {
   return (
     <div className="App">
+      <MouseContainer />
       {/* <ClassMouse /> */}
-      <HookMouse />
+      {/* <HookMouse /> */}
 
       {/* <ClassCounterOne /> */}
       {/* <HookCounterOne /> */}
