@@ -1,5 +1,5 @@
 import logo from "./logo.svg";
-import React from "react";
+import React, { useReducer } from "react";
 import "./App.css";
 import PostList from "./components/PostList";
 import PostForm from "./components/PostForm";
@@ -20,40 +20,63 @@ import ComponentC from "./components/ComponentC";
 import CounterOne from "./components/CounterOne";
 import CounterTwo from "./components/CounterTwo";
 import CounterThree from "./components/CounterThree";
+import CompB from "./components/CompB";
+import CompA from "./components/CompA";
+import CompC from "./components/CompC";
 
 export const UserContext = React.createContext();
 export const ChannelContext = React.createContext();
+
+export const CountContext = React.createContext();
+
+const initialState = 0;
+const reducer = (state, action) => {
+  switch (action) {
+    case "increment":
+      return state + 1;
+    case "decrement":
+      return state - 1;
+    case "reset":
+      return initialState;
+    default:
+      return state;
+  }
+};
+
 function App() {
+  const [count, dispatch] = useReducer(reducer, initialState);
   return (
     <div className="App">
-      <CounterThree />
+      <CountContext.Provider
+        value={{ countState: count, countDispatch: dispatch }}
+      >
+        Count - {count}
+        <CompA />
+        <CompB />
+        <CompC />
+      </CountContext.Provider>
+
+      {/* <CounterThree /> */}
       {/* <CounterTwo /> */}
       {/* <CounterOne /> */}
-
       {/* <UserContext.Provider value={"Renuka"}>
         <ChannelContext.Provider value={"Patil"}>
           <ComponentC />
         </ChannelContext.Provider>
       </UserContext.Provider> */}
-
       {/* <DataFetching /> */}
-
       {/* <IntervalHookCounter someProp="hello" />
       <IntervalClassCounter /> */}
-
       {/* <MouseContainer /> */}
       {/* <ClassMouse /> */}
       {/* <HookMouse /> */}
-
       {/* <ClassCounterOne /> */}
       {/* <HookCounterOne /> */}
-
       {/* <HookCounterFour /> */}
       {/* <HookCounterThree /> */}
       {/* <HookCounterTwo /> */}
       {/* <HookCounter /> */}
       {/* <ClassCounter /> */}
-
       {/* <PostList /> */}
       {/* <PostForm /> */}
     </div>
