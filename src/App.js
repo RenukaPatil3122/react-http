@@ -24,6 +24,7 @@ import CompB from "./components/CompB";
 import CompA from "./components/CompA";
 import CompC from "./components/CompC";
 import DataFetchingOne from "./components/DataFetchingOne";
+import DataFetchingTwo from "./components/DataFetchingTwo";
 
 export const UserContext = React.createContext();
 export const ChannelContext = React.createContext();
@@ -48,7 +49,8 @@ function App() {
   const [count, dispatch] = useReducer(reducer, initialState);
   return (
     <div className="App">
-      <DataFetchingOne />
+      <DataFetchingTwo />
+      {/* <DataFetchingOne /> */}
 
       {/* <CountContext.Provider
         value={{ countState: count, countDispatch: dispatch }}
