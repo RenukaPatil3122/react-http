@@ -9,11 +9,11 @@ const reducer = (state, action) => {
     case "increment":
       return { ...state, firstCounter: state.firstCounter + action.value };
     case "decrement":
-      return { ...state, secondCounter: state.firstCounter - action.value };
-    case "increment2":
-      return { ...state, secondCounter: state.firstCounter + action.value };
-    case "decrement2":
       return { ...state, firstCounter: state.firstCounter - action.value };
+    case "increment2":
+      return { ...state, secondCounter: state.secondCounter + action.value };
+    case "decrement2":
+      return { ...state, secondCounter: state.secondCounter - action.value };
     case "reset":
       return initialState;
     default:
