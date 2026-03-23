@@ -34,6 +34,7 @@ import DocTitleOne from "./components/DocTitleOne";
 import DocTitleTwo from "./components/DocTitleTwo";
 import CounterOneHook from "./components/CounterOneHook";
 import CounterTwoHook from "./components/CounterTwoHook";
+import UserForm from "./components/UserForm";
 
 export const UserContext = React.createContext();
 export const ChannelContext = React.createContext();
@@ -58,8 +59,10 @@ function App() {
   const [count, dispatch] = useReducer(reducer, initialState);
   return (
     <div className="App">
-      <CounterOneHook />
-      <CounterTwoHook />
+      <UserForm />
+
+      {/* <CounterOneHook />
+      <CounterTwoHook /> */}
 
       {/* <DocTitleOne />
       <DocTitleTwo /> */}
