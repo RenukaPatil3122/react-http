@@ -27,6 +27,7 @@ import DataFetchingOne from "./components/DataFetchingOne";
 import DataFetchingTwo from "./components/DataFetchingTwo";
 import ParentComponent from "./components/ParentComponent";
 import Counter from "./components/Counter";
+import FocusInput from "./components/FocusInput";
 
 export const UserContext = React.createContext();
 export const ChannelContext = React.createContext();
@@ -51,7 +52,9 @@ function App() {
   const [count, dispatch] = useReducer(reducer, initialState);
   return (
     <div className="App">
-      <Counter />
+      <FocusInput />
+
+      {/* <Counter /> */}
 
       {/* <ParentComponent /> */}
 
